@@ -4,12 +4,12 @@ public class Person{
 
   private String name;
   private ArrayList<Drinkable> drink;
-  private int drunkLevel;
+  private int threshold;
 
-  public Person(String name, int drunkLevel){
+  public Person(String name, int threshold){
     this.name = name;
     this.drink = new ArrayList<Drinkable>();
-    this.drunkLevel = drunkLevel;
+    this.threshold = threshold;
   }
 
   public String getName(){
@@ -36,17 +36,16 @@ public class Person{
     return null;
   }
 
-  public int units(){
+  public int drunkLevel(){
     int counter = 0;
     for (Drinkable beverage : drink){
      counter += beverage.units();
    }
-   drunkLevel += counter;
    return counter;
   }
 
   public boolean drunk(){
-    if (this.drunkLevel >= 10){
+    if (this.drunkLevel() >= this.threshold){
       return true;
     }
     return false;

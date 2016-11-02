@@ -8,7 +8,7 @@ public class PersonTest{
 
   @Before 
   public void before(){
-    person = new Person("Tom", 0);
+    person = new Person("Tom", 10);
     beer = new Beer();
     whisky = new Whisky();
   }
@@ -73,7 +73,7 @@ public class PersonTest{
     person.drink(beer);
     person.drink(whisky);
     person.drink(whisky);
-    assertEquals(12, person.units());
+    assertEquals(12, person.drunkLevel());
   }
 
   @Test
